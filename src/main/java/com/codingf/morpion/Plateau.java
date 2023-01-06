@@ -84,6 +84,8 @@ public class Plateau {
 
                     this.cases[ligne - 1][colonne - 1].valeur = this.joueurActuel.caractere; //change la valeur de la case pour X ou O celon le joueur
                     this.compteurTour += 1;
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
                     this.afficher(); //affiche la grille
 
                 }else{break;}
