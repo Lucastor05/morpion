@@ -69,7 +69,7 @@ public class Plateau {
 
                     while(!valide){ //si la case choisi par l'utilisateur n'est pas valide
                         //redemmander les lignes et les colonnes
-                        System.out.println("\n\t\t\t\t\t\t\t\t\t\t***Coordonnées invalides, veuillez entrés une position qui n'a pas deja ete prise!***");
+                        System.out.println("\n\t\t\t\t\t\t\t\t\t\t***Coordonnées invalides, veuillez entrer une position qui n'a pas deja ete prise!***");
                         System.out.println("\nAu Tour de "+ this.joueurActuel.pseudo + " !\nA quelle ligne voulez-vous jouer ?");
                         ligne = sc.nextInt();
                         System.out.println("\nA quelle colonne voulez-vous jouer ?");
@@ -119,15 +119,20 @@ public class Plateau {
                 if(i==0){ //si 1 ligne
                     if(j==0){ //si premiere case
                         /*affiche (ex taille:3) soit le rendu dans la console est:
-                        * ┌───┬───┬───┐
+                        * ┌ ─ ─ ─ ┬ ───┬───┐
                         * │ . │
                         */
-                        System.out.print("┌───┬");
+                        System.out.print("\t\t\t\t\t\t\t\t    ");
+                        for(int y=1; y<=this.taille; y++){
+                            System.out.printf(y+"   ");
+                        }
+                        System.out.print("\n\t\t\t\t\t\t\t\t  ┌───┬");
                         for(int x = 0; x < this.taille-2; x++){
                             System.out.print("───┬");
                         }
+
                         System.out.print("───┐\n");
-                        System.out.print("│ "+this.cases[i][j].valeur + " │");
+                        System.out.print("\t\t\t\t\t\t\t\t"+(i+1)+" │ "+this.cases[i][j].valeur + " │");
                     }else { //sinon afficher les autres case
 
                         /*Affiche la suite d'au dessus soit le rendu dans la console est:
@@ -144,12 +149,12 @@ public class Plateau {
                          * ├───┼───┼───┤
                          * │ . │
                          */
-                        System.out.print("├───┼");
+                        System.out.print("\t\t\t\t\t\t\t\t  ├───┼");
                         for(int x = 0; x < this.taille-2; x++){
                             System.out.print("───┼");
                         }
                         System.out.print("───┤\n");
-                        System.out.print("│ "+this.cases[i][j].valeur + " │");
+                        System.out.print("\t\t\t\t\t\t\t\t"+(i+1)+" │ "+this.cases[i][j].valeur + " │");
                     }else {
                         /*Affiche la suite d'au dessus soit le rendu dans la console est:
                          * ┌───┬───┬───┐
@@ -176,7 +181,7 @@ public class Plateau {
          * │ . │ . │ . │
          * └───┴───┴───┘
          */
-        System.out.print("└───┴");
+        System.out.print("\t\t\t\t\t\t\t\t  └───┴");
         for(int x = 0; x < this.taille-2; x++){
             System.out.print("───┴");
         }
