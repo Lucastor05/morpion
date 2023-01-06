@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Morpion {
     public static void main(String[] args) {
-
         //Demandes les pseudos
         Scanner scan = new Scanner(System.in);
         Scanner scanCara1 = new Scanner(System.in);
@@ -16,8 +15,6 @@ public class Morpion {
 
         String cara1 = "X";
         String cara2 = "O";
-
-
 
         //Demandes les pseudos
         System.out.println("\n\nVoulez vous personnaliser vos symboles ? \n1-Oui\n2-Non");
