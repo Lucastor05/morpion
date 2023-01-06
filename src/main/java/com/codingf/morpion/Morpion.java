@@ -24,7 +24,7 @@ public class Morpion {
                 "\\ \\________\\ \\_______\\ \\_______\\       \\ \\_______\\ \\_______\\       \\ \\__\\    \\ \\__\\ \\_______\\ \\__\\\\ _\\\\ \\__\\    \\ \\__\\ \\_______\\ \\__\\\\ \\__\\\n" +
                 " \\|________|\\|_______|\\|_______|        \\|_______|\\|_______|        \\|__|     \\|__|\\|_______|\\|__|\\|__|\\|__|     \\|__|\\|_______|\\|__| \\|__|");
 
-        System.out.println("Vous êtes sur le point de jouer au Morpion. \n\nLes règles du jeu sont simples: Allignez votre signe sur toute la longueur du tableau en ligne, colonnes, ou en diagonales. \n\n\t\t\t\t***Bonne partie!***");
+        System.out.println("\n\n/*\n * Vous êtes sur le point de jouer au Morpion. \n * Les règles du jeu sont simples: Allignez votre signe sur toute la longueur du tableau en ligne, colonnes, ou en diagonales.\n */ \n\n\t\t\t\t***Bonne partie!***");
 
 
         //Demandes les pseudos
