@@ -37,6 +37,7 @@ public class Plateau {
 
         while (restart) { //si le joueur veux rejouer
 
+
             for(int i = 0; i<=this.taille-1; i++){//pour chaque ligne du tableau
                 for(int j = 0; j<=this.taille-1; j++){ //pour chaque case du tableau
                     //remise a 0 des valeurs du tableau
@@ -84,6 +85,7 @@ public class Plateau {
                     this.cases[ligne - 1][colonne - 1].valeur = this.joueurActuel.caractere; //change la valeur de la case pour X ou O celon le joueur
                     this.compteurTour += 1;
                     this.afficher(); //affiche la grille
+
                 }else{break;}
             }
 
