@@ -31,12 +31,14 @@ public class Plateau {
     public void jouer(Scanner sc) {
 
         //Initialisation des variables
-        this.afficher();
         boolean restart = true;
         boolean valide = true;
 
         while (restart) { //si le joueur veux rejouer
 
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            this.afficher();
 
             for(int i = 0; i<=this.taille-1; i++){//pour chaque ligne du tableau
                 for(int j = 0; j<=this.taille-1; j++){ //pour chaque case du tableau
@@ -61,7 +63,7 @@ public class Plateau {
                     int ligne = sc.nextInt();
                     boolean checkLigne;
                     if(ligne>this.taille){
-                        System.out.println("\n\t\t\t\t\t\t\t***Ligne non valide !!!***");
+                        System.out.println("\n\t\t\t\t\t\t\t\t***Ligne non valide !!!***");
                         checkLigne = false;
                     }else{
                         checkLigne = true;
@@ -71,6 +73,7 @@ public class Plateau {
                         ligne = sc.nextInt();
 
                         if(ligne>this.taille){
+                            System.out.println("\n\t\t\t\t\t\t\t\t***Ligne non valide !!!***");
                             checkLigne = false;
                         }else{
                             checkLigne = true;
@@ -84,7 +87,7 @@ public class Plateau {
 
                     if(colonne>this.taille){
                         checkColonne = false;
-                        System.out.println("\n\t\t\t\t\t\t\t***Colonne non valide !!!***");
+                        System.out.println("\n\t\t\t\t\t\t\t\t***Colonne non valide !!!***");
                     }else{
                         checkColonne = true;
                     }
@@ -93,6 +96,7 @@ public class Plateau {
                         colonne = sc.nextInt();
 
                         if(colonne>this.taille){
+                            System.out.println("\n\t\t\t\t\t\t\t\t***Colonne non valide !!!***");
                             checkColonne = false;
                         }else{
                             checkColonne = true;
@@ -187,6 +191,7 @@ public class Plateau {
     public void afficher() {
         /*
          * Fonction qui affiche la grille du morpion (à jour par rapport au jeu).
+         * return le tableau
          */
         for (int i = 0; i < this.taille; i++){ //une boucle avec i qui a pour valeur la taille du tableau, se qui equivaut au ligne
             for (int j = 0; j < this.taille; j++) { //une boucle avec j qui a pour valeur la taille du tableau, se qui equivaut au colonne (au case dans i)
