@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class Morpion {
     public static void main(String[] args) {
 
+
         System.out.println("Vous êtes sur le point de jouer au Morpion." +
-                "\n\nLes règles du jeu sont simples: Allignez votre signe sur toute la longueur du tableau\n" +
-                "en ligne, colonnes, ou en diagonales. \n" +
+                "\n\nLes règles du jeu sont simples: Allignez votre signe sur toute la longueur du tableau en ligne, colonnes, ou en diagonales. \n" +
                 "\n                   Bonne partie!");
+
 
         //Demandes les pseudos
         Scanner scan = new Scanner(System.in);
@@ -21,8 +22,6 @@ public class Morpion {
 
         String cara1 = "X";
         String cara2 = "O";
-
-
 
         //Demandes les pseudos
         System.out.println("\n\nVoulez vous personnaliser vos symboles ? \n1-Oui\n2-Non");
