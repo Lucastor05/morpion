@@ -56,10 +56,48 @@ public class Plateau {
                     }
 
 
+                    //Demande ligne et check la validité des coordonnées
                     System.out.println("\nAu Tour de "+ this.joueurActuel.pseudo + " !\nA quelle ligne voulez-vous jouer ?");
                     int ligne = sc.nextInt();
+                    boolean checkLigne;
+                    if(ligne>this.taille){
+                        System.out.println("\n\t\t\t\t\t\t\t***Ligne non valide !!!***");
+                        checkLigne = false;
+                    }else{
+                        checkLigne = true;
+                    }
+                    while(!checkLigne){
+                        System.out.println("\nAu Tour de "+ this.joueurActuel.pseudo + " !\nA quelle ligne voulez-vous jouer ?");
+                        ligne = sc.nextInt();
+
+                        if(ligne>this.taille){
+                            checkLigne = false;
+                        }else{
+                            checkLigne = true;
+                        }
+                    }
+
+                    //Demande colonne et check la validité des coordonnées
+                    boolean checkColonne;
                     System.out.println("\nA quelle colonne voulez-vous jouer ?");
                     int colonne = sc.nextInt();
+
+                    if(colonne>this.taille){
+                        checkColonne = false;
+                        System.out.println("\n\t\t\t\t\t\t\t***Colonne non valide !!!***");
+                    }else{
+                        checkColonne = true;
+                    }
+                    while(!checkColonne){
+                        System.out.println("\nAu Tour de "+ this.joueurActuel.pseudo + " !\nA quelle ligne voulez-vous jouer ?");
+                        colonne = sc.nextInt();
+
+                        if(colonne>this.taille){
+                            checkColonne = false;
+                        }else{
+                            checkColonne = true;
+                        }
+                    }
 
 
                     if(!this.cases[ligne - 1][colonne - 1].valeur.equals(".")){ //si la case n'est pas vide
@@ -69,11 +107,44 @@ public class Plateau {
 
                     while(!valide){ //si la case choisi par l'utilisateur n'est pas valide
                         //redemmander les lignes et les colonnes
-                        System.out.println("\n\t\t\t\t\t\t\t\t\t\t***Coordonnées invalides, veuillez entrer une position qui n'a pas deja ete prise!***");
+                        System.out.println("\n\t\t\t\t\t***Coordonnées invalides, veuillez entrer une position qui n'a pas deja ete prise!***");
+
                         System.out.println("\nAu Tour de "+ this.joueurActuel.pseudo + " !\nA quelle ligne voulez-vous jouer ?");
                         ligne = sc.nextInt();
+                        if(ligne>this.taille){
+                            checkLigne = false;
+                        }else{
+                            checkLigne = true;
+                        }
+                        while(!checkLigne){
+                            System.out.println("\nAu Tour de "+ this.joueurActuel.pseudo + " !\nA quelle ligne voulez-vous jouer ?");
+                            ligne = sc.nextInt();
+
+                            if(ligne>this.taille){
+                                checkLigne = false;
+                            }else{
+                                checkLigne = true;
+                            }
+                        }
+
                         System.out.println("\nA quelle colonne voulez-vous jouer ?");
                         colonne = sc.nextInt();
+                        if(colonne>this.taille){
+                            checkColonne = false;
+                        }else{
+                            checkColonne = true;
+                        }
+                        while(!checkColonne){
+                            System.out.println("\nAu Tour de "+ this.joueurActuel.pseudo + " !\nA quelle ligne voulez-vous jouer ?");
+                            colonne = sc.nextInt();
+
+                            if(colonne>this.taille){
+                                checkColonne = false;
+                            }else{
+                                checkColonne = true;
+                            }
+                        }
+
 
                         if(!this.cases[ligne - 1][colonne - 1].valeur.equals(".")){ //verifier la validité des nouvelles coordonnées
                             valide = false;
@@ -93,11 +164,11 @@ public class Plateau {
 
             if (!this.verification() && this.grillePleine()) { //si aucun joueur n'as gagné et que la grille est pleine
                 //affiche ex aequo
-                System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t***Match nul !***");
+                System.out.println("\n\t\t\t\t\t\t\t***Match nul !***");
                 this.compteurTour = 0;
             } else if (this.verification()) { //Si un joueur a gagné
                 //affiche message de félicitation
-                System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t***Félicitation " + this.joueurActuel.pseudo + ", tu as gagné !***");
+                System.out.println("\n\n\t\t\t\t\t\t\t***Félicitation " + this.joueurActuel.pseudo + ", tu as gagné !***");
                 this.compteurTour = 0;
             }
 
