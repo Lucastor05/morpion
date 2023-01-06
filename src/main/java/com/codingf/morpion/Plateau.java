@@ -37,7 +37,6 @@ public class Plateau {
 
         while (restart) { //si le joueur veux rejouer
 
-
             for(int i = 0; i<=this.taille-1; i++){//pour chaque ligne du tableau
                 for(int j = 0; j<=this.taille-1; j++){ //pour chaque case du tableau
                     //remise a 0 des valeurs du tableau
@@ -90,7 +89,7 @@ public class Plateau {
 
             if (!this.verification() && this.grillePleine()) { //si aucun joueur n'as gagné et que la grille est pleine
                 //affiche ex aequo
-                System.out.println("\nMatch nul");
+                System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t***Match nul !***");
                 this.compteurTour = 0;
             } else if (this.verification()) { //Si un joueur a gagné
                 //affiche message de félicitation
@@ -201,11 +200,11 @@ public class Plateau {
             for (int j = 0; j < this.taille; j++) { //une boucle avec j qui a pour valeur la taille du tableau, se qui equivaut au colonne (au case dans i)
                 if (this.cases[i][j].valeur.equals(".")) { //si la case est vide on arrete
                     break;
-                } else if (this.cases[i][j].valeur.equals("X")) {//si la case est égal à un X
+                } else if (this.cases[i][j].valeur.equals(this.joueur1.caractere)) {//si la case est égal à un X
                     //Incrementation du compteur des X et remise à 0 du compteur des O
                     compteurX += 1;
                     compteurO = 0;
-                } else if (this.cases[i][j].valeur.equals("O")) { //si la case est égal à un O
+                } else if (this.cases[i][j].valeur.equals(this.joueur2.caractere)) { //si la case est égal à un O
                     //Incrementation du compteur des O et remise à 0 du compteur des X
                     compteurO += 1;
                     compteurX = 0;
@@ -234,11 +233,11 @@ public class Plateau {
 
                 if (this.cases[i][j].valeur.equals(".")) {//si la case est vide on arrete
                     break;
-                } else if (this.cases[i][j].valeur.equals("X")) {//si la case est égal à un X
+                } else if (this.cases[i][j].valeur.equals(this.joueur1.caractere)) {//si la case est égal à un X
                     //Incrementation du compteur des X et remise à 0 du compteur des O
                     compteurX += 1;
                     compteurO = 0;
-                } else if (this.cases[i][j].valeur.equals("O")) {//si la case est égal à un O
+                } else if (this.cases[i][j].valeur.equals(this.joueur2.caractere)) {//si la case est égal à un O
                     //Incrementation du compteur des O et remise à 0 du compteur des X
                     compteurO += 1;
                     compteurX = 0;
@@ -267,12 +266,12 @@ public class Plateau {
         for (int j = 0; j < this.taille; j++) { //une boucle avec j qui a pour valeur la taille du tableau, se qui equivaut au case
             if (this.cases[i][j].valeur.equals(".")) { //si la case est vide on arrete
                 return false;
-            } else if (this.cases[i][j].valeur.equals("X")) {//si la case est égal à un X
+            } else if (this.cases[i][j].valeur.equals(this.joueur1.caractere)) {//si la case est égal à un X
                 //Incrementation du compteur des O et remise à 0 du compteur des O
                 compteurX += 1;
                 compteurO = 0;
                 i+=1;
-            } else if (this.cases[i][j].valeur.equals("O")) {//si la case est égal à un O
+            } else if (this.cases[i][j].valeur.equals(this.joueur2.caractere)) {//si la case est égal à un O
                 //Incrementation du compteur des O et remise à 0 du compteur des X
                 compteurX = 0;
                 compteurO += 1;
@@ -298,12 +297,12 @@ public class Plateau {
         for (int i = 0; i < this.taille; i++){ //une boucle avec i qui a pour valeur la taille du tableau, se qui equivaut au ligne
             if (this.cases[i][j].valeur.equals(".")) {//si la case est vide on arrete
                 return false;
-            } else if (this.cases[i][j].valeur.equals("X")) {//si la case est égal à un X
+            } else if (this.cases[i][j].valeur.equals(this.joueur1.caractere)) {//si la case est égal à un X
                 //Incrementation du compteur des O et remise à 0 du compteur des O
                 compteurX += 1;
                 compteurO = 0;
                 j-=1;
-            } else if (this.cases[i][j].valeur.equals("O")) {//si la case est égal à un O
+            } else if (this.cases[i][j].valeur.equals(this.joueur2.caractere)) {//si la case est égal à un O
                 //Incrementation du compteur des O et remise à 0 du compteur des X
                 compteurO += 1;
                 compteurX = 0;
